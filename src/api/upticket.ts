@@ -1,5 +1,5 @@
 interface ApiEnvelope<T> {
-    data: T;
+  data: T;
 }
 
 const BASE_URL = 'https://upticket.uppersoft.cc/api/v1';
@@ -14,7 +14,7 @@ export async function fetchData<T>(path: string): Promise<T> {
       throw new Error(`Erro de rede: ${response.status} ${response.statusText}`);
     }
 
-    const responseJson: ApiEnvelope<T> = await response.json(); 
+    const responseJson: ApiEnvelope<T> = await response.json();
 
     return responseJson.data;
 

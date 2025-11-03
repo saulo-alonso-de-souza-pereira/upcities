@@ -30,15 +30,15 @@ const mockCards = [
 ];
 
 
-let scrollCallback: () => void = () => {};
+let scrollCallback: () => void = () => { };
 
 describe('HelpPage.vue', () => {
   let pinia: any;
 
   const setScrollY = (value: number) => {
 
-    window.scrollY = value; 
-    
+    window.scrollY = value;
+
     if (scrollCallback) {
       scrollCallback();
     }
@@ -51,8 +51,8 @@ describe('HelpPage.vue', () => {
 
     vi.stubGlobal('scrollY', 0);
 
-    
-    vi.spyOn(window, 'scrollTo').mockImplementation(() => {});
+
+    vi.spyOn(window, 'scrollTo').mockImplementation(() => { });
 
 
     vi.spyOn(window, 'addEventListener').mockImplementation((event, cb) => {
@@ -62,10 +62,10 @@ describe('HelpPage.vue', () => {
     });
 
     vi.spyOn(window, 'removeEventListener');
-    
+
 
     setScrollY(0);
-    vi.spyOn(console, 'error').mockImplementation(() => {});
+    vi.spyOn(console, 'error').mockImplementation(() => { });
   });
 
   afterEach(() => {
@@ -76,7 +76,7 @@ describe('HelpPage.vue', () => {
     isMobileValue: boolean,
     initialCards: any[] = []
   ): { wrapper: VueWrapper<any>; faqStore: any } => {
-    
+
     mockedUseIsMobile.mockReturnValue({ isMobile: ref(isMobileValue) });
 
     const faqStore = useFaqStore();
@@ -105,9 +105,9 @@ describe('HelpPage.vue', () => {
     const { wrapper, faqStore } = mountComponent(false, mockCards);
 
     expect(wrapper.findAll('.mock-help-card').length).toBe(mockCards.length);
-    
+
     expect(wrapper.find('p.text-lg.font-semibold').exists()).toBe(false);
-    
+
     expect(faqStore.fetchFaqData).not.toHaveBeenCalled();
   });
 
@@ -188,14 +188,14 @@ describe('HelpPage.vue', () => {
   it('deve chamar window.scrollTo ao clicar no botão "Voltar ao topo"', async () => {
     const { wrapper } = mountComponent(false, []);
     const scrollToTopButton = wrapper.find('button[aria-label="Voltar ao topo"]');
-    
+
     setScrollY(301);
     await wrapper.vm.$nextTick();
-    
+
     expect(scrollToTopButton.isVisible()).toBe(true);
 
     await scrollToTopButton.trigger('click');
-    
+
     expect(window.scrollTo).toHaveBeenCalledTimes(1);
     expect(window.scrollTo).toHaveBeenCalledWith({
       top: 0,
@@ -207,9 +207,9 @@ describe('HelpPage.vue', () => {
     const { wrapper } = mountComponent(false, []);
 
     expect(window.addEventListener).toHaveBeenCalledWith('scroll', scrollCallback);
-    
+
     wrapper.unmount();
-    
+
     expect(window.removeEventListener).toHaveBeenCalledTimes(1);
     expect(window.removeEventListener).toHaveBeenCalledWith('scroll', scrollCallback);
   });

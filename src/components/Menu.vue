@@ -14,7 +14,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, type PropType, computed } from 'vue';
+import { defineComponent, type PropType } from 'vue';
 import { useRoute } from 'vue-router';
 
 interface NavItem {
@@ -73,5 +73,4 @@ export default defineComponent({
     @apply h-full flex items-center text-black text-sm desktop:text-base font-montserrat transition-colors;
     @apply pt-0 pb-0; 
   }
-
 </style>

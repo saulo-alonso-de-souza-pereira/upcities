@@ -28,20 +28,20 @@ describe('AgendaPage.vue', () => {
     pinia = createPinia();
     setActivePinia(pinia);
 
-    vi.spyOn(console, 'error').mockImplementation(() => {});
+    vi.spyOn(console, 'error').mockImplementation(() => { });
   });
 
   const mountComponent = (
     isMobileValue: boolean,
     initialCards: any[] = []
   ): { wrapper: VueWrapper<any>; faqStore: any } => {
-    
+
     mockedUseIsMobile.mockReturnValue({ isMobile: ref(isMobileValue) });
 
     const faqStore = useFaqStore();
-    
+
     faqStore.cards = initialCards;
-    
+
     vi.spyOn(faqStore, 'fetchFaqData');
 
     const wrapper = mount(AgendaPage, {

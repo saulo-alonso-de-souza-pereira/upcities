@@ -29,7 +29,7 @@ describe('AppointmentsPage.vue', () => {
 
 
   beforeEach(() => {
-    
+
     vi.clearAllMocks();
 
 
@@ -37,7 +37,7 @@ describe('AppointmentsPage.vue', () => {
     setActivePinia(pinia);
 
 
-    vi.spyOn(console, 'error').mockImplementation(() => {});
+    vi.spyOn(console, 'error').mockImplementation(() => { });
   });
 
 
@@ -45,7 +45,7 @@ describe('AppointmentsPage.vue', () => {
     isMobileValue: boolean,
     initialCards: any[] = []
   ): { wrapper: VueWrapper<any>; faqStore: any } => {
-    
+
     mockedUseIsMobile.mockReturnValue({ isMobile: ref(isMobileValue) });
 
     const faqStore = useFaqStore();
@@ -81,7 +81,7 @@ describe('AppointmentsPage.vue', () => {
 
   it('deve aplicar as classes de mobile (text-xl) quando isMobile for true', () => {
 
-    const { wrapper } = mountComponent(true); 
+    const { wrapper } = mountComponent(true);
 
     const h1 = wrapper.find('h1');
     expect(h1.classes()).toContain('text-xl');

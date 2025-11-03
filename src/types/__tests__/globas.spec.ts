@@ -15,7 +15,7 @@ const mockFaqApiResponse: FaqApiResponse = {
     {
       answer: "Outra resposta.",
       ticket: {
-        description: null, // Testando o "string | null"
+        description: null, 
       },
     },
   ],

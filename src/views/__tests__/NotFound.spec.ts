@@ -7,11 +7,11 @@ import { useIsMobile } from '@/composables/useIsMobile';
 import NotFound from '@/views/NotFound.vue';
 
 vi.mock('@/composables/useIsMobile', () => ({
-  useIsMobile: vi.fn(),
+    useIsMobile: vi.fn(),
 }));
 
 const MockCircleAlert = {
-  template: '<svg data-testid="alert-icon"></svg>',
+    template: '<svg data-testid="alert-icon"></svg>',
 };
 
 const mockedUseIsMobile = vi.mocked(useIsMobile);
@@ -22,7 +22,7 @@ describe('NotFound.vue', () => {
   });
 
   const mountComponent = (isMobileValue: boolean): VueWrapper<any> => {
-    
+
     mockedUseIsMobile.mockReturnValue({ isMobile: ref(isMobileValue) });
 
 
@@ -34,7 +34,7 @@ describe('NotFound.vue', () => {
       },
     });
 
-    return wrapper;
+      return wrapper;
   };
 
   it('deve renderizar o título principal "Página Não Encontrada" e o ícone', () => {
