@@ -2,7 +2,7 @@
   <div class="min-h-screen bg-background-page pt-16 font-montserrat">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 desktop:py-12">
       <h1 class="flex items-center text-black font-bold mb-6 desktop:mb-8"
-        :class="{'text-xl': isMobile, 'text-2xl desktop:text-3xl': !isMobile}">
+        :class="{'text-xl': isMobile, 'text-28px': !isMobile}">
         
         <div class="w-12 h-12 bg-primary-light rounded-full flex items-center justify-center mr-2">
           <CircleQuestionMark class="text-black"/>
@@ -15,8 +15,7 @@
           type="text"
           v-model="searchTerm"
           placeholder="Digite sua dúvida"
-          class="w-full pl-10 pr-10 py-3 border border-gray-border rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-primary text-sm"
-          :class="{'text-gray-search': !searchTerm}"
+          class="w-full pl-10 pr-10 py-3 border border-gray-border rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-primary text-sm placeholder:text-gray-search"
         />
         <button
           v-if="searchTerm"

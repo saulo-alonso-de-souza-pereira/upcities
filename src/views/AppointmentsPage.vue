@@ -7,7 +7,7 @@
         <div class="w-12 h-12 bg-primary-light rounded-full flex items-center justify-center mr-2">
           <NotebookPen class="text-black"/>
         </div>
-        Meus Apontamentos
+        Meus Agendamentos
       </h1>
     </div>
   </div>
@@ -21,7 +21,7 @@ import { useFaqStore } from './../stores/Faq';
 
 
 export default defineComponent({
-  name: 'AgendaPage',
+  name: 'AppointmentsPage',
   components: {
     NotebookPen,
   },

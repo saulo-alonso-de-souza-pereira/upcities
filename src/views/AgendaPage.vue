@@ -17,8 +17,8 @@
 <script lang="ts">
 import { CalendarClock } from 'lucide-vue-next';
 import { defineComponent, onMounted } from 'vue';
-import { useIsMobile } from '@/composables/useIsMobile';
-import { useFaqStore } from '@/stores/Faq';
+import { useIsMobile } from './../composables/useIsMobile';
+import { useFaqStore } from './../stores/Faq';
 
 
 export default defineComponent({
